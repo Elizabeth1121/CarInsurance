@@ -1,0 +1,91 @@
+﻿@using CarInsurance.ViewModels
+@model List<InsureeVm>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    @* create a display like a row for each item Example: FirstName  LastName  EmailAdress*@
+    <tr>
+        <th>
+            <h6>First Name</h6>
+        </th>
+        <th>
+            <h6>Last Name</h6>
+        </th>
+        <th>
+            <h6>Email Adress</h6>
+        </th>
+        <th>
+            <h6>Date of Birth</h6>
+        </th>
+        <th>
+            <h6>Car Year</h6>
+        </th>
+        <th>
+            <h6>Car Make</h6>
+        </th>
+        <th>
+            <h6>Car Model</h6>
+        </th>
+        <th>
+            <h6>DUI</h6>
+        </th>
+        <th>
+            <h6>Speeding Tickets</h6>
+        </th>
+        <th>
+            <h6>Coverage Type</h6>
+        </th>
+        <th>
+            <h6>Quote</h6>
+        </th>
+    </tr>
+
+    @foreach (var insuree in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.CarYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.CarMake)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.CarModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.DUI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.SpeedingTickets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.CoverageType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.Quote)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = insuree.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = insuree.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = insuree.Id }) |
+                @Html.ActionLink("All Quotes Issued", "AllQuotesIssued", new {id = insuree.Id})
+            </td>
+        </tr>
+     }
+</table>

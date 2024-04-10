@@ -1,0 +1,45 @@
+﻿@using CarInsurance.ViewModels
+@model List<InsureeVm>
+
+@{
+    ViewBag.Title = "AllQuotesIssued";
+}
+
+<h2>AllQuotesIssued</h2>
+
+@*add table with a row that displays first name last name and email address and the Quote the were issued using the AllQuotesIssued in the admincontroller*@
+
+<table class="table">
+    <tr>
+        <th>
+            <h6>First Name</h6>
+        </th>
+        <th>
+            <h6>Last Name</h6>
+        </th>
+        <th>
+            <h6>Email Adress</h6>
+        </th>
+        <th>
+            <h6>Quote</h6>
+        </th>
+    </tr>
+
+    @foreach (var insuree in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => insuree.Quote)
+            </td>
+        </tr>
+    }
+</table>
